@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f3f0e8">
+  <meta name="theme-color" content="#FBF6EC">
   <meta name="description" content="Natural Heartland Solutions, northwest Iowa. Soil-health biologicals, Pit Pucks for hog barns, and Pond Pucks. Read the Algona corn trial or send a note to the Iowa office.">
   <title>Natural Heartland Solutions | Soil Health, Pit Pucks, Pond Pucks</title>
   <link rel="icon" href="favicon.ico" sizes="any">
@@ -14,20 +14,21 @@
   <script>document.documentElement.classList.add("js");</script>
   <style>
     :root {
-      --tan: #E6B06E;
-      --paper: #f3f0e8;
-      --white: #fffcf7;
-      --ink: #1e1914;
-      --muted: #5c554c;
-      --line: #e4ddd2;
+      --tan: #E8B46A;
+      --paper: #FBF6EC;
+      --white: #FFFFFF;
+      --panel-2: #F6ECD9;
+      --ink: #4A2614;
+      --muted: #7A6450;
+      --line: #E6D6B8;
       --brown: #4A2614;
-      --gold: #F2C230;
-      --leaf: #8FA33C;
+      --gold: #F2B51C;
+      --leaf: #9AA23A;
       --sage: #4A2614;
-      --sage-soft: #f4f7e4;
+      --sage-soft: #F6ECD9;
       --pond: #1a5566;
       --pond-soft: #e5f2f5;
-      --gold-soft: #fff4cc;
+      --gold-soft: #F6ECD9;
       --shadow: 0 14px 36px rgba(74, 38, 20, 0.1);
       --shadow-hover: 0 22px 44px rgba(74, 38, 20, 0.16);
       --display: "Oswald", "Arial Narrow", Impact, sans-serif;
@@ -66,8 +67,8 @@
 
     header {
       position: sticky; top: 0; z-index: 50;
-      background: rgba(255, 252, 247, 0.94);
-      border-bottom: 2px solid var(--gold);
+      background: var(--white);
+      border-bottom: 2px solid var(--line);
       box-shadow: 0 8px 22px rgba(74, 38, 20, 0.06);
     }
     .header-inner {
@@ -80,7 +81,7 @@
     .brand-name { font-family: var(--display); font-weight: 600; font-size: 1.45rem; line-height: 0.95; letter-spacing: 0.01em; text-transform: uppercase; color: var(--brown); }
     .brand-name small { display: block; font-family: var(--sans); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brown); margin-top: 4px; }
     .nav-toggle {
-      margin-left: auto; display: none; border: 2px solid var(--brown); background: var(--gold);
+      margin-left: auto; display: none; border: 2px solid var(--brown); background: var(--panel-2);
       color: var(--brown); border-radius: 10px; min-width: 44px; min-height: 44px; padding: 0 12px; font: inherit; font-weight: 700; cursor: pointer;
     }
     nav { margin-left: auto; display: flex; align-items: center; gap: 4px; }
@@ -89,8 +90,8 @@
       padding: 8px 10px; border-radius: 8px;
     }
     nav a:hover { background: rgba(74, 38, 20, 0.1); color: var(--brown); }
-    nav a.contact-link { background: var(--brown); color: var(--gold); margin-left: 6px; }
-    nav a.contact-link:hover { background: #321809; color: var(--gold); }
+    nav a.contact-link { background: var(--panel-2); color: var(--brown); border: 2px solid var(--brown); margin-left: 6px; }
+    nav a.contact-link:hover { background: var(--brown); color: var(--panel-2); }
 
     .wrap { max-width: var(--max); margin: 0 auto; padding: 0 22px; }
     section { scroll-margin-top: calc(var(--header) + 12px); }
@@ -127,7 +128,7 @@
     .hero-copy { position: relative; z-index: 1; width: min(760px, 100%); padding: 72px 0 64px; }
     .hero .kicker { color: var(--gold); border-left-color: var(--gold); }
     .hero h1, .hero .lede { color: #fff; }
-    .hero .lede { color: #F6E2C4; max-width: 38rem; }
+    .hero .lede { color: #F6ECD9; max-width: 38rem; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 18px; }
     .btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 8px;
@@ -137,26 +138,26 @@
       transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;
     }
     .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(42, 22, 12, 0.22); }
-    .btn-primary { background: var(--brown); color: var(--gold); border-color: var(--brown); }
-    .btn-primary:hover { background: #321809; color: var(--gold); }
-    .btn-ghost { background: rgba(255, 252, 247, 0.94); color: var(--brown); border-color: transparent; }
-    .btn-ghost:hover { background: var(--gold); color: var(--brown); }
+    .btn-primary { background: var(--panel-2); color: var(--brown); border-color: var(--brown); }
+    .btn-primary:hover { background: var(--brown); color: var(--panel-2); }
+    .btn-ghost { background: var(--white); color: var(--brown); border-color: var(--line); }
+    .btn-ghost:hover { background: var(--panel-2); color: var(--brown); border-color: var(--brown); }
     .hero .btn-ghost { background: transparent; color: #fff; border-color: rgba(255, 252, 247, 0.85); box-shadow: none; }
-    .hero .btn-ghost:hover { background: var(--gold); color: var(--brown); border-color: var(--gold); }
-    .hero .btn-primary { background: var(--gold); color: var(--brown); border-color: var(--gold); }
-    .hero .btn-primary:hover { background: #ffd85a; color: var(--brown); }
-    .btn-gold { background: var(--gold); color: var(--brown); border-color: var(--gold); }
-    .btn-gold:hover { background: #ffd85a; color: var(--brown); }
+    .hero .btn-ghost:hover { background: var(--panel-2); color: var(--brown); border-color: var(--panel-2); }
+    .hero .btn-primary { background: var(--paper); color: var(--brown); border-color: var(--paper); }
+    .hero .btn-primary:hover { background: var(--panel-2); color: var(--brown); border-color: var(--panel-2); }
+    .btn-gold { background: var(--panel-2); color: var(--brown); border-color: var(--brown); }
+    .btn-gold:hover { background: var(--brown); color: var(--panel-2); }
     .quick-tools { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
     .quick-tools a {
       font-weight: 700; text-decoration: none; color: #fff;
       border: 1px solid rgba(255, 252, 247, 0.45); border-radius: 999px; padding: 6px 12px;
       background: rgba(42, 22, 12, 0.28);
     }
-    .quick-tools a:hover { background: var(--gold); color: var(--brown); border-color: var(--gold); }
+    .quick-tools a:hover { background: var(--panel-2); color: var(--brown); border-color: var(--panel-2); }
     .hero-logo {
       width: 168px; height: auto; display: block; margin: 0 0 18px;
-      background: var(--tan); border-radius: 18px; padding: 6px;
+      background: transparent; border-radius: 18px; padding: 6px;
       box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
     }
 
@@ -172,7 +173,7 @@
     .stats-row b { display: block; font-size: clamp(2.6rem, 4.5vw, 3.8rem); color: var(--brown); }
     .stats-row span { display: block; margin-top: 4px; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
     .stats-row .gain { background: #4A2614; }
-    .stats-row .gain b, .stats-row .gain span { color: var(--gold); }
+    .stats-row .gain b, .stats-row .gain span { color: var(--panel-2); }
     .stats-row .gain:hover { background: #321809; }
 
     .swipe-hint { margin: -8px 0 14px; font-size: 0.92rem; font-weight: 700; color: var(--brown); }
@@ -210,7 +211,7 @@
     .lb-bar { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
     .lb-bar button, .lb-nav {
       min-width: 44px; min-height: 44px; border-radius: 999px; border: 0;
-      background: var(--gold); color: var(--brown); font: inherit; font-weight: 700; cursor: pointer; padding: 0 14px;
+      background: var(--panel-2); color: var(--brown); border: 2px solid var(--brown); font: inherit; font-weight: 700; cursor: pointer; padding: 0 14px;
     }
 
     .tools { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -225,8 +226,8 @@
     .tool-card.plots { border-top-color: var(--brown); }
     .tool-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); color: inherit; }
     .tool-card .icon { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: var(--leaf); color: var(--brown); }
-    .tool-card.barn .icon { background: var(--gold); color: var(--brown); }
-    .tool-card.plots .icon { background: var(--brown); color: var(--gold); }
+    .tool-card.barn .icon { background: var(--panel-2); color: var(--brown); }
+    .tool-card.plots .icon { background: var(--brown); color: var(--panel-2); }
     .tool-card p { margin: 0; color: var(--brown); flex: 1; }
     .tool-go { font-weight: 700; color: var(--brown); margin-top: 8px; }
     .tool-card:hover .tool-go { text-decoration: underline; text-underline-offset: 3px; }
@@ -246,7 +247,7 @@
       box-shadow: var(--shadow); transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
     .card p:last-child { margin-bottom: 0; }
-    a.card:hover, .focus-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: #e0c48a; color: inherit; }
+    a.card:hover, .focus-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--line); color: inherit; }
     .focus-card { text-decoration: none; color: inherit; display: block; }
     .pill { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--leaf); color: var(--brown); border-radius: 999px; padding: 3px 8px; margin-bottom: 8px; }
 
@@ -260,7 +261,7 @@
 
     .product + .product { margin-top: 14px; }
     .product-head { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; }
-    .headline { color: #6A3A1C; font-weight: 700; margin: 0 0 8px; }
+    .headline { color: #6B3A1C; font-weight: 700; margin: 0 0 8px; }
     .omri { width: 112px; flex: none; background: var(--white); border: 1px solid var(--line); border-radius: 10px; padding: 8px; text-align: center; }
     .omri img { width: 100%; height: auto; display: block; }
     .omri span { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--brown); margin-top: 4px; }
@@ -270,7 +271,7 @@
     .callout.pond { background: var(--pond-soft); }
 
     .split { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 22px; align-items: start; margin-bottom: 18px; }
-    .split img, .frame img { width: 100%; border-radius: 16px; display: block; object-fit: contain; height: auto; background: #f3e4cc; }
+    .split img, .frame img { width: 100%; border-radius: 16px; display: block; object-fit: contain; height: auto; background: var(--panel-2); }
     .benefit-grid { grid-template-columns: 1fr 1fr; }
     .benefit h3 { font-size: 1.2rem; }
 
@@ -284,9 +285,9 @@
     .stat.gain span { color: var(--ink); }
     .bars { display: grid; gap: 8px; margin: 8px 0 18px; }
     .bar { display: grid; grid-template-columns: 96px 1fr; gap: 10px; align-items: center; font-size: 0.92rem; font-weight: 700; }
-    .bar i { display: block; height: 12px; border-radius: 999px; background: #d9c7a4; position: relative; }
+    .bar i { display: block; height: 12px; border-radius: 999px; background: var(--panel-2); position: relative; }
     .bar i::before { content: ""; position: absolute; inset: 0 auto 0 0; width: var(--w); border-radius: inherit; background: var(--leaf); }
-    .bar.check i::before { background: #b9a48a; }
+    .bar.check i::before { background: var(--line); }
     .pass-grid { grid-template-columns: repeat(3, 1fr); margin: 12px 0 18px; }
     .pass { background: var(--paper); border-radius: 14px; padding: 16px; border: 1px solid var(--line); }
     .pass .when { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brown); }
@@ -302,7 +303,7 @@
     th { color: var(--muted); font-size: 0.82rem; letter-spacing: 0.04em; text-transform: uppercase; }
     label { display: block; font-weight: 700; margin-bottom: 6px; color: var(--brown); }
     input, select, textarea {
-      width: 100%; padding: 12px 12px; border: 1px solid #d9d0c3; border-radius: 10px;
+      width: 100%; padding: 12px 12px; border: 1px solid var(--line); border-radius: 10px;
       background: var(--white); color: var(--ink); font: inherit;
     }
     textarea { min-height: 130px; resize: vertical; }
@@ -318,13 +319,13 @@
     .qty-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
     .qty-row .btn { flex: 1; }
     .qty-row input { width: 88px; text-align: center; font-weight: 700; }
-    .product-shot { width: 100%; height: auto; max-height: 320px; object-fit: contain; border-radius: 12px; background: #f3e4cc; margin-bottom: 12px; }
+    .product-shot { width: 100%; height: auto; max-height: 320px; object-fit: contain; border-radius: 12px; background: var(--panel-2); margin-bottom: 12px; }
 
     .about { display: grid; grid-template-columns: 0.86fr 1.14fr; gap: 28px; align-items: start; }
     .about-photo { margin: 0; max-width: 260px; border-radius: 16px; overflow: hidden; background: var(--white); border: 1px solid var(--line); box-shadow: var(--shadow); }
     .about-photo img { max-height: 320px; }
     .founder + .founder { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); }
-    .role { margin: 0 0 8px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #6A3A1C; }
+    .role { margin: 0 0 8px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #6B3A1C; }
 
     .socials { display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; }
     .socials a { text-decoration: none; color: var(--ink); font-weight: 700; text-align: center; min-width: 88px; }
@@ -332,7 +333,7 @@
       width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; margin: 0 auto 6px; color: white;
     }
     .social-bubble.fb { background: #1877f2; }
-    .social-bubble.x { background: var(--brown); color: var(--gold); }
+    .social-bubble.x { background: var(--brown); color: var(--panel-2); }
     .social-bubble.yt { background: #e10600; }
 
     .contact-card { max-width: 720px; margin: 0 auto; }
@@ -573,7 +574,7 @@
           <button type="button" class="shot" aria-label="Enlarge photo: Hogs in a hog barn">
             <img src="hogbarn.jpg" width="1000" height="1333" alt="Hogs in a hog barn" loading="lazy">
           </button>
-          <div class="card" style="background: var(--gold-soft); border-color: transparent;">
+          <div class="card" style="background: var(--panel-2); border-color: transparent;">
             <h3>Pit Pucks</h3>
             <p>Drop the pucks into the manure system.</p>
           </div>
