@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#E6B06E">
+  <meta name="theme-color" content="#f3f0e8">
   <meta name="description" content="Natural Heartland Solutions, northwest Iowa. Soil-health biologicals, Pit Pucks for hog barns, and Pond Pucks. Read the Algona corn trial or send a note to the Iowa office.">
   <title>Natural Heartland Solutions | Soil Health, Pit Pucks, Pond Pucks</title>
   <link rel="icon" href="favicon.ico" sizes="any">
@@ -15,11 +15,11 @@
   <style>
     :root {
       --tan: #E6B06E;
-      --paper: #E6B06E;
+      --paper: #f3f0e8;
       --white: #fffcf7;
-      --ink: #4A2614;
-      --muted: #4A2614;
-      --line: #e7c48a;
+      --ink: #1e1914;
+      --muted: #5c554c;
+      --line: #e4ddd2;
       --brown: #4A2614;
       --gold: #F2C230;
       --leaf: #8FA33C;
@@ -32,7 +32,7 @@
       --shadow-hover: 0 22px 44px rgba(74, 38, 20, 0.16);
       --display: "Oswald", "Arial Narrow", Impact, sans-serif;
       --sans: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
-      --header: 128px;
+      --header: 108px;
       --max: 1120px;
     }
     * { box-sizing: border-box; }
@@ -66,17 +66,17 @@
 
     header {
       position: sticky; top: 0; z-index: 50;
-      background: var(--tan);
-      border-bottom: 4px solid var(--brown);
-      box-shadow: 0 10px 28px rgba(74, 38, 20, 0.08);
+      background: rgba(255, 252, 247, 0.94);
+      border-bottom: 2px solid var(--gold);
+      box-shadow: 0 8px 22px rgba(74, 38, 20, 0.06);
     }
     .header-inner {
       max-width: var(--max); margin: 0 auto; min-height: var(--header);
       padding: 8px 22px; display: flex; align-items: center; gap: 16px;
     }
     .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--brown); min-width: 0; }
-    .brand img, .hero-logo, .footer-brand img { background: var(--tan); object-fit: contain; }
-    .brand img { width: 108px; height: 108px; flex: none; }
+    .brand img, .hero-logo, .footer-brand img { background: transparent; object-fit: contain; }
+    .brand img { width: 84px; height: 84px; flex: none; }
     .brand-name { font-family: var(--display); font-weight: 600; font-size: 1.45rem; line-height: 0.95; letter-spacing: 0.01em; text-transform: uppercase; color: var(--brown); }
     .brand-name small { display: block; font-family: var(--sans); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brown); margin-top: 4px; }
     .nav-toggle {
@@ -111,7 +111,7 @@
     .center-intro .lede { margin-left: auto; margin-right: auto; }
 
     .hero {
-      position: relative; min-height: calc(100svh - var(--header) - 6px); display: flex; align-items: flex-end;
+      position: relative; min-height: 420px; display: flex; align-items: flex-end;
       color: #fff; background: #2a160c; overflow: hidden;
     }
     .hero-bg {
@@ -183,15 +183,16 @@
       align-items: flex-start; -webkit-overflow-scrolling: touch;
     }
     .field-grid figure {
-      flex: 0 0 min(88vw, 440px); scroll-snap-align: center; margin: 0;
-      background: var(--white); border-radius: 18px; overflow: hidden;
+      flex: 0 0 min(70vw, 220px); scroll-snap-align: center; margin: 0;
+      background: var(--white); border-radius: 14px; overflow: hidden;
       border: 1px solid var(--line); box-shadow: var(--shadow);
     }
     .shot {
-      display: block; width: 100%; padding: 0; border: 0; background: #f3e4cc;
+      display: block; width: 100%; padding: 0; border: 0; background: var(--paper);
       cursor: zoom-in; color: inherit;
     }
-    .shot img, .about-photo img, .frame-shot { width: 100%; height: auto; display: block; object-fit: contain; background: #f3e4cc; }
+    .shot img, .about-photo img, .frame-shot { width: 100%; height: auto; display: block; object-fit: contain; background: var(--paper); }
+    .field-grid .shot img { height: 168px; object-fit: contain; }
     .field-grid figcaption, .about-photo figcaption {
       font-size: 0.95rem; font-weight: 700; color: var(--brown); padding: 12px 14px 14px; background: var(--white);
     }
@@ -250,7 +251,7 @@
     .pill { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--leaf); color: var(--brown); border-radius: 999px; padding: 3px 8px; margin-bottom: 8px; }
 
     .story { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 28px; align-items: center; background: var(--white); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); }
-    .story img { width: 100%; height: auto; max-height: 460px; object-fit: contain; object-position: center; display: block; background: #f3e4cc; }
+    .story img, .split .shot img { width: 100%; height: 200px; object-fit: contain; object-position: center; display: block; background: var(--paper); }
     .story div { padding: 28px 28px 28px 0; }
     .story p { color: var(--muted); }
 
@@ -278,9 +279,9 @@
     .stat { background: var(--paper); border-radius: 14px; padding: 16px 18px; border: 1px solid var(--line); }
     .stat b { display: block; font-size: clamp(2rem, 4vw, 3rem); color: var(--brown); }
     .stat span { color: var(--muted); font-size: 0.95rem; }
-    .stat.gain { background: var(--brown); color: var(--gold); border-color: var(--brown); }
-    .stat.gain b { color: var(--gold); }
-    .stat.gain span { color: #F6E2C4; }
+    .stat.gain { background: var(--white); color: var(--brown); border: 2px solid var(--gold); }
+    .stat.gain b { color: var(--brown); }
+    .stat.gain span { color: var(--ink); }
     .bars { display: grid; gap: 8px; margin: 8px 0 18px; }
     .bar { display: grid; grid-template-columns: 96px 1fr; gap: 10px; align-items: center; font-size: 0.92rem; font-weight: 700; }
     .bar i { display: block; height: 12px; border-radius: 999px; background: #d9c7a4; position: relative; }
@@ -320,7 +321,8 @@
     .product-shot { width: 100%; height: auto; max-height: 320px; object-fit: contain; border-radius: 12px; background: #f3e4cc; margin-bottom: 12px; }
 
     .about { display: grid; grid-template-columns: 0.86fr 1.14fr; gap: 28px; align-items: start; }
-    .about-photo { margin: 0; border-radius: 18px; overflow: hidden; background: var(--white); border: 1px solid var(--line); box-shadow: var(--shadow); }
+    .about-photo { margin: 0; max-width: 260px; border-radius: 16px; overflow: hidden; background: var(--white); border: 1px solid var(--line); box-shadow: var(--shadow); }
+    .about-photo img { max-height: 320px; }
     .founder + .founder { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); }
     .role { margin: 0 0 8px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #6A3A1C; }
 
@@ -335,18 +337,19 @@
 
     .contact-card { max-width: 720px; margin: 0 auto; }
 
-    footer { background: var(--brown); color: #F6E2C4; border-top: 6px solid var(--gold); padding: 36px 0 28px; }
+    footer { background: var(--paper); color: var(--ink); border-top: 3px solid var(--gold); padding: 28px 0 24px; }
     .footer-grid { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: start; }
     .footer-brand { display: flex; gap: 14px; align-items: center; }
     .footer-brand img { width: 112px; height: 112px; flex: none; border-radius: 16px; }
-    footer a { color: var(--gold); }
-    footer strong { color: white; }
+    footer a { color: var(--brown); }
+    footer strong { color: var(--brown); }
     footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
-    footer p { color: #F6E2C4; margin: 8px 0 0; max-width: 36rem; }
-    .legal { margin-top: 22px; color: #F6E2C4; font-size: 0.92rem; }
+    footer p { color: var(--muted); margin: 8px 0 0; max-width: 36rem; }
+    .legal { margin: 0; color: var(--muted); font-size: 0.92rem; }
 
     @media (min-width: 900px) {
       .field-grid { display: grid; grid-template-columns: repeat(3, 1fr); overflow: visible; scroll-snap-type: none; align-items: start; }
+      .field-grid .shot img { height: 190px; }
       .field-grid figure { flex: none; }
       .swipe-hint { display: none; }
     }
@@ -362,7 +365,7 @@
       .stats-row a:last-child { border-bottom: 0; }
     }
     @media (max-width: 720px) {
-      .hero { min-height: calc(100svh - var(--header) - 6px); align-items: flex-end; }
+      .hero { min-height: 320px; align-items: flex-end; }
       .hero-bg { object-position: center 42%; }
       .hero-shade {
         background: linear-gradient(180deg, rgba(42, 22, 12, 0.16) 0%, rgba(42, 22, 12, 0.05) 32%, rgba(42, 22, 12, 0.78) 64%, rgba(42, 22, 12, 0.92) 100%);
@@ -389,8 +392,8 @@
       .callout, .product-head { display: flex; flex-direction: column; align-items: flex-start; }
       .section { padding: 64px 0; }
       .header-inner { padding-inline: 14px; }
-      .brand img { width: 84px; height: 84px; }
-      :root { --header: 108px; }
+      .brand img { width: 72px; height: 72px; }
+      :root { --header: 96px; }
       .wrap { padding-inline: 16px; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -572,7 +575,7 @@
           </button>
           <div class="card" style="background: var(--gold-soft); border-color: transparent;">
             <h3>Pit Pucks</h3>
-            <p>Drop the pucks into the manure system. Use 5 pucks per 100 hogs to start, then 1 puck per 100 hogs each month for 11 months.</p>
+            <p>Drop the pucks into the manure system.</p>
           </div>
         </div>
         <div class="benefit-grid">
@@ -598,7 +601,7 @@
       <article id="ponds" style="margin-top: 48px;">
         <div class="card" style="background: var(--pond-soft); border-color: transparent; margin-bottom: 14px;">
           <h3>Pond Pucks</h3>
-          <p>Drop the pucks in the water. Standard maintenance starts at 50 pucks per acre, then 10 per acre for 7 warm months. Heavy muck or algae starts at 100 per acre, then the same 10.</p>
+          <p>Drop the pucks in the water.</p>
         </div>
         <div class="benefit-grid">
           <article class="card benefit">
@@ -657,6 +660,43 @@
         </div>
         <p class="disclaimer">Single-field, single-season, unreplicated side-by-side comparison. Response will vary with soil, weather, hybrid and management. Product prices are retail; returns exclude application cost.</p>
         <p style="margin-top: 16px;"><a class="btn btn-primary" href="https://wyatt-debug.github.io/Test-Plot/">Full trial</a></p>
+      </div>
+    </section>
+
+    <section class="section wrap reveal" id="calculator">
+      <p class="kicker">On this page</p>
+      <h2>Annual box count</h2>
+      <p class="lede">Same Pit Puck rate as the Barn Calculator, plus pond maintenance. Boxes hold 60 pucks and the order rounds up so the year is covered. For several barns and a printable plan, use the <a href="https://wyatt-debug.github.io/barn-calculator/">Barn Calculator</a>.</p>
+      <div class="calc-layout">
+        <div class="card">
+          <h3>Rates this calculator uses</h3>
+          <table>
+            <thead><tr><th>Situation</th><th>First month</th><th>After that</th></tr></thead>
+            <tbody>
+              <tr><td>Hog barn</td><td>5 pucks per 100 hogs</td><td>1 puck per 100 hogs each month for 11 months</td></tr>
+              <tr><td>Pond, standard</td><td>50 pucks per acre</td><td>10 pucks per acre for 7 warm months</td></tr>
+              <tr><td>Pond, heavy muck or algae</td><td>100 pucks per acre</td><td>10 pucks per acre for 7 warm months</td></tr>
+            </tbody>
+          </table>
+          <p class="tool-note">Soil-health dosing depends on the crop and the ground. Build that list in the <a href="https://wyatt-debug.github.io/Base_Application_2026/">Base Application</a>, or <a href="#contact">contact us for a soil plan</a>.</p>
+        </div>
+        <form class="card" id="calc-form">
+          <div class="field">
+            <label for="calc-type">Application</label>
+            <select id="calc-type">
+              <option value="manure">Hog barn (number of hogs)</option>
+              <option value="pond_std">Pond / lake, standard maintenance</option>
+              <option value="pond_heavy">Pond / lake, severe muck and algae</option>
+            </select>
+          </div>
+          <div class="field">
+            <label id="input-label" for="calc-input">Estimated number of hogs in the barn</label>
+            <input type="number" id="calc-input" inputmode="decimal" min="0.1" step="any" placeholder="e.g. 2400">
+          </div>
+          <button class="btn btn-primary" type="submit" style="width: 100%;">Calculate boxes</button>
+          <p class="error" id="calc-error" role="alert"></p>
+          <div class="result" id="calc-result" aria-live="polite"></div>
+        </form>
       </div>
     </section>
 
@@ -781,6 +821,73 @@
     external.forEach(function (link) {
       link.target = "_blank";
       link.rel = "noopener noreferrer";
+    });
+
+    var calcType = document.getElementById("calc-type");
+    var calcInput = document.getElementById("calc-input");
+    var inputLabel = document.getElementById("input-label");
+    var calcResult = document.getElementById("calc-result");
+    var calcError = document.getElementById("calc-error");
+
+    calcType.addEventListener("change", function () {
+      calcResult.style.display = "none";
+      calcError.textContent = "";
+      calcInput.value = "";
+      if (calcType.value === "manure") {
+        inputLabel.textContent = "Estimated number of hogs in the barn";
+        calcInput.placeholder = "e.g. 2400";
+      } else {
+        inputLabel.textContent = "Estimated pond surface area (acres)";
+        calcInput.placeholder = "e.g. 1.5";
+      }
+    });
+
+    document.getElementById("calc-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      var type = calcType.value;
+      var value = parseFloat(calcInput.value);
+      if (!value || value <= 0) {
+        calcError.textContent = "Please input a valid size metric to run calculations.";
+        calcResult.style.display = "none";
+        return;
+      }
+      calcError.textContent = "";
+      var totalPucksNeeded = 0;
+      var boxesNeeded = 0;
+      var titleText = "";
+      var descriptionText = "";
+      var dosageSubText = "";
+      if (type === "manure") {
+        var startupPucks = (value / 100) * 5;
+        var maintenancePucksPerMonth = (value / 100) * 1;
+        totalPucksNeeded = startupPucks + (maintenancePucksPerMonth * 11);
+        boxesNeeded = Math.ceil(totalPucksNeeded / 60);
+        titleText = "Hog barn application profile";
+        descriptionText = "Operational analysis for a facility holding " + value.toLocaleString() + " hogs. Total annual requirement: " + totalPucksNeeded.toFixed(0) + " pucks.";
+        dosageSubText = "First month startup: " + startupPucks.toFixed(0) + " pucks. Remaining 11 months: " + maintenancePucksPerMonth.toFixed(0) + " pucks per month.";
+      } else if (type === "pond_std") {
+        var startupStd = value * 50;
+        var maintStd = value * 10;
+        totalPucksNeeded = startupStd + (maintStd * 7);
+        boxesNeeded = Math.ceil(totalPucksNeeded / 60);
+        titleText = "Standard pond maintenance profile";
+        descriptionText = "Operational analysis for a " + value + " acre standard baseline water treatment profile. Total annual requirement: " + totalPucksNeeded.toFixed(0) + " pucks.";
+        dosageSubText = "First month startup: " + startupStd.toFixed(0) + " pucks. 7 active warm months: " + maintStd.toFixed(0) + " pucks per month.";
+      } else {
+        var startupHeavy = value * 100;
+        var maintHeavy = value * 10;
+        totalPucksNeeded = startupHeavy + (maintHeavy * 7);
+        boxesNeeded = Math.ceil(totalPucksNeeded / 60);
+        titleText = "Heavy build-up pond profile";
+        descriptionText = "Operational analysis for a " + value + " acre heavy muck or severe historical algae water profile. Total annual requirement: " + totalPucksNeeded.toFixed(0) + " pucks.";
+        dosageSubText = "First month startup: " + startupHeavy.toFixed(0) + " pucks. 7 active warm months: " + maintHeavy.toFixed(0) + " pucks per month.";
+      }
+      var extraPucks = (boxesNeeded * 60) - totalPucksNeeded;
+      var extraLine = extraPucks > 0.5
+        ? "with +" + extraPucks.toFixed(0) + " extra treatment pucks rolling over for next year."
+        : "That order covers the year exactly.";
+      calcResult.innerHTML = "<h3>" + titleText + "</h3><p>" + descriptionText + "</p><p>" + dosageSubText + "</p><p class=\"big-order\">Suggested order: " + boxesNeeded + " box(es)</p><p>" + extraLine + "</p>";
+      calcResult.style.display = "block";
     });
 
     document.querySelector(".contact-card").addEventListener("submit", function () {
