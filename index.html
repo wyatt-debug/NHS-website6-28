@@ -3,30 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f3f0e8">
+  <meta name="theme-color" content="#E6B06E">
   <meta name="description" content="Natural Heartland Solutions, northwest Iowa. Soil-health biologicals, Pit Pucks for hog barns, and Pond Pucks. Plan a 2026 season, size a barn, and read the Algona corn trial.">
   <title>Natural Heartland Solutions | Soil Health, Pit Pucks, Pond Pucks</title>
-  <link rel="icon" href="favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="fonts/fonts.css">
   <style>
     :root {
-      --paper: #f3f0e8;
+      --tan: #E6B06E;
+      --paper: #E6B06E;
       --white: #fffcf7;
-      --ink: #1e1914;
-      --muted: #5c554c;
-      --line: #e4ddd2;
-      --brown: #3a2618;
-      --gold: #8d6420;
-      --sage: #234027;
-      --sage-soft: #e7f0e3;
+      --ink: #4A2614;
+      --muted: #4A2614;
+      --line: #e7c48a;
+      --brown: #4A2614;
+      --gold: #F2C230;
+      --leaf: #8FA33C;
+      --sage: #4A2614;
+      --sage-soft: #f4f7e4;
       --pond: #1a5566;
       --pond-soft: #e5f2f5;
-      --gold-soft: #f8f1e2;
-      --shadow: 0 12px 32px rgba(48, 36, 22, 0.06);
+      --gold-soft: #fff4cc;
+      --shadow: 0 12px 32px rgba(74, 38, 20, 0.1);
       --serif: "Fraunces", "Iowan Old Style", Palatino, Georgia, serif;
       --sans: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
-      --header: 88px;
+      --header: 128px;
       --max: 1120px;
     }
     * { box-sizing: border-box; }
@@ -41,9 +45,9 @@
       color-scheme: light;
     }
     img { max-width: 100%; }
-    a { color: var(--sage); }
-    a:hover { color: #16301c; }
-    :focus-visible { outline: 3px solid #c4922a; outline-offset: 3px; }
+    a { color: var(--brown); font-weight: 700; text-underline-offset: 3px; }
+    a:hover { color: #2d160c; }
+    :focus-visible { outline: 3px solid var(--brown); outline-offset: 3px; }
     .skip {
       position: absolute; left: 12px; top: -40px; background: var(--ink); color: white;
       padding: 8px 12px; z-index: 2000; border-radius: 8px;
@@ -55,46 +59,49 @@
     }
     .stripe { display: grid; grid-template-columns: 54% 24% 22%; height: 6px; }
     .stripe span:nth-child(1) { background: var(--brown); }
-    .stripe span:nth-child(2) { background: #e0aa29; }
-    .stripe span:nth-child(3) { background: #8ea04a; }
+    .stripe span:nth-child(2) { background: var(--gold); }
+    .stripe span:nth-child(3) { background: var(--leaf); }
 
     header {
       position: sticky; top: 0; z-index: 50;
-      background: rgba(255, 252, 247, 0.94);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--line);
+      background: var(--tan);
+      border-bottom: 4px solid var(--brown);
     }
     .header-inner {
       max-width: var(--max); margin: 0 auto; min-height: var(--header);
-      padding: 10px 22px; display: flex; align-items: center; gap: 18px;
+      padding: 8px 22px; display: flex; align-items: center; gap: 16px;
     }
-    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); min-width: 0; }
-    .brand img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; flex: none; }
-    .brand-name { font-family: var(--serif); font-weight: 650; font-size: 1.15rem; line-height: 1.05; letter-spacing: -0.02em; }
-    .brand-name small { display: block; font-family: var(--sans); font-weight: 700; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); margin-top: 3px; }
+    .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--brown); min-width: 0; }
+    .brand img, .hero-logo, .footer-brand img { background: var(--tan); object-fit: contain; }
+    .brand img { width: 108px; height: 108px; flex: none; }
+    .hero-logo { width: min(250px, 72%); height: auto; display: block; margin: 0 0 6px; }
+    .brand-name { font-family: var(--serif); font-weight: 650; font-size: 1.28rem; line-height: 1.02; letter-spacing: -0.02em; color: var(--brown); }
+    .brand-name small { display: block; font-family: var(--sans); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brown); margin-top: 4px; }
     .nav-toggle {
-      margin-left: auto; display: none; border: 1px solid var(--line); background: var(--white);
-      border-radius: 10px; min-width: 44px; min-height: 44px; padding: 0 12px; font: inherit; font-weight: 700; cursor: pointer;
+      margin-left: auto; display: none; border: 2px solid var(--brown); background: var(--gold);
+      color: var(--brown); border-radius: 10px; min-width: 44px; min-height: 44px; padding: 0 12px; font: inherit; font-weight: 700; cursor: pointer;
     }
-    nav { margin-left: auto; display: flex; align-items: center; gap: 6px; }
+    nav { margin-left: auto; display: flex; align-items: center; gap: 4px; }
     nav a {
-      text-decoration: none; color: var(--ink); font-weight: 600; font-size: 0.98rem;
+      text-decoration: none; color: var(--brown); font-weight: 700; font-size: 0.98rem;
       padding: 8px 10px; border-radius: 8px;
     }
-    nav a:hover { background: var(--sage-soft); color: var(--sage); }
-    nav a.contact-link { background: var(--sage); color: white; margin-left: 6px; }
-    nav a.contact-link:hover { background: var(--sage-deep, #1a301e); color: white; }
+    nav a:hover { background: rgba(74, 38, 20, 0.1); color: var(--brown); }
+    nav a.contact-link { background: var(--brown); color: var(--gold); margin-left: 6px; }
+    nav a.contact-link:hover { background: #321809; color: var(--gold); }
 
     .wrap { max-width: var(--max); margin: 0 auto; padding: 0 22px; }
     section { scroll-margin-top: calc(var(--header) + 12px); }
     .section { padding: 72px 0; }
     .kicker {
       display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--sage); margin-bottom: 8px;
+      text-transform: uppercase; color: var(--brown); margin-bottom: 8px;
+      border-left: 4px solid var(--leaf); padding-left: 8px;
     }
     h1, h2, h3, .stat b, .price { font-family: var(--serif); font-weight: 650; letter-spacing: -0.03em; line-height: 1.12; }
     h1 { font-size: clamp(2.4rem, 4.4vw, 3.7rem); margin: 0 0 14px; color: var(--brown); }
-    h2 { font-size: clamp(1.9rem, 3vw, 2.7rem); margin: 0 0 12px; color: var(--brown); }
+    h2 { font-size: clamp(1.9rem, 3vw, 2.7rem); margin: 0 0 14px; color: var(--brown); width: fit-content; border-bottom: 4px solid var(--gold); padding-bottom: 4px; }
+    .center-intro h2 { margin-left: auto; margin-right: auto; }
     h3 { font-size: 1.45rem; margin: 0 0 6px; color: var(--brown); }
     .lede { font-size: 1.18rem; color: var(--muted); max-width: 46rem; margin: 0 0 22px; }
     .center-intro { text-align: center; }
@@ -108,12 +115,12 @@
       min-height: 46px; padding: 10px 16px; border-radius: 10px; text-decoration: none;
       font-weight: 700; border: 2px solid transparent; cursor: pointer; font: inherit; font-weight: 700;
     }
-    .btn-primary { background: var(--sage); color: white; }
-    .btn-primary:hover { background: #1a301e; color: white; }
-    .btn-ghost { background: transparent; color: var(--brown); border-color: #cfc4b2; }
-    .btn-ghost:hover { border-color: var(--sage); color: var(--sage); background: white; }
-    .btn-gold { background: #e0aa29; color: #2a1c0d; }
-    .btn-gold:hover { background: #f0c15a; color: #2a1c0d; }
+    .btn-primary { background: var(--brown); color: var(--gold); }
+    .btn-primary:hover { background: #321809; color: var(--gold); }
+    .btn-ghost { background: var(--white); color: var(--brown); border-color: var(--brown); }
+    .btn-ghost:hover { border-color: var(--brown); color: var(--brown); background: var(--gold); }
+    .btn-gold { background: var(--gold); color: var(--brown); }
+    .btn-gold:hover { background: #ffd85a; color: var(--brown); }
     .quick-tools { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 0; padding: 0; list-style: none; }
     .quick-tools a { font-weight: 700; text-underline-offset: 3px; }
     .hero-photo { position: relative; border-radius: 18px; overflow: hidden; background: #ddd; aspect-ratio: 4 / 3; box-shadow: var(--shadow); }
@@ -125,25 +132,27 @@
     }
     .hero-caption strong { display: block; color: var(--brown); }
 
-    .gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding-bottom: 18px; }
-    .gallery figure { margin: 0; }
-    .gallery img { width: 100%; height: 150px; object-fit: cover; border-radius: 12px; display: block; background: #ddd; }
-    .gallery figcaption { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+    .field-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .field-grid figure { margin: 0; background: var(--white); border-radius: 14px; overflow: hidden; border: 1px solid var(--line); }
+    .field-grid img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; background: #d7c4a4; }
+    .field-grid figcaption { font-size: 0.92rem; font-weight: 700; color: var(--brown); padding: 10px 12px 12px; }
 
     .tools { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
     .tools.section { padding-top: 32px; padding-bottom: 40px; }
     .tool-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .tool-card {
       display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: inherit;
-      background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 22px;
-      min-height: 100%; box-shadow: var(--shadow); transition: transform 0.15s ease, border-color 0.15s ease;
+      background: var(--white); border: 1px solid var(--line); border-top: 6px solid var(--leaf); border-radius: 16px; padding: 22px;
+      min-height: 100%; box-shadow: var(--shadow); transition: transform 0.15s ease;
     }
-    .tool-card:hover { transform: translateY(-3px); border-color: #c9b89a; color: inherit; }
-    .tool-card .icon { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: var(--sage-soft); color: var(--sage); }
-    .tool-card.barn .icon { background: var(--gold-soft); color: var(--gold); }
-    .tool-card.plots .icon { background: #f3e6d4; color: var(--brown); }
-    .tool-card p { margin: 0; color: var(--muted); flex: 1; }
-    .tool-go { font-weight: 700; color: var(--sage); margin-top: 8px; }
+    .tool-card.barn { border-top-color: var(--gold); }
+    .tool-card.plots { border-top-color: var(--brown); }
+    .tool-card:hover { transform: translateY(-3px); color: inherit; }
+    .tool-card .icon { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: var(--leaf); color: var(--brown); }
+    .tool-card.barn .icon { background: var(--gold); color: var(--brown); }
+    .tool-card.plots .icon { background: var(--brown); color: var(--gold); }
+    .tool-card p { margin: 0; color: var(--brown); flex: 1; }
+    .tool-go { font-weight: 700; color: var(--brown); margin-top: 8px; }
     .tool-card:hover .tool-go { text-decoration: underline; text-underline-offset: 3px; }
     .tool-note { margin: 18px 0 0; color: var(--muted); }
 
@@ -153,6 +162,9 @@
 
     .focus-grid, .benefit-grid, .buy-grid, .econ-grid, .pass-grid { display: grid; gap: 16px; }
     .focus-grid { grid-template-columns: repeat(3, 1fr); }
+    .focus-card { border-top: 5px solid var(--leaf); }
+    .focus-card:nth-child(2) { border-top-color: var(--gold); }
+    .focus-card:nth-child(3) { border-top-color: var(--brown); }
     .card {
       background: var(--white); border: 1px solid var(--line); border-radius: 16px; padding: 22px;
       box-shadow: var(--shadow);
@@ -160,7 +172,7 @@
     .card p:last-child { margin-bottom: 0; }
     .focus-card { text-decoration: none; color: inherit; display: block; }
     .focus-card:hover { border-color: #c9b89a; color: inherit; }
-    .pill { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--sage-soft); color: var(--sage); border-radius: 999px; padding: 3px 8px; margin-bottom: 8px; }
+    .pill { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--leaf); color: var(--brown); border-radius: 999px; padding: 3px 8px; margin-bottom: 8px; }
 
     .story { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 28px; align-items: center; background: var(--white); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
     .story img { width: 100%; height: 340px; object-fit: cover; display: block; }
@@ -172,10 +184,10 @@
 
     .product + .product { margin-top: 14px; }
     .product-head { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; }
-    .headline { color: var(--gold); font-weight: 700; margin: 0 0 8px; }
+    .headline { color: #6A3A1C; font-weight: 700; margin: 0 0 8px; }
     .omri { width: 112px; flex: none; background: var(--white); border: 1px solid var(--line); border-radius: 10px; padding: 8px; text-align: center; }
     .omri img { width: 100%; height: auto; display: block; }
-    .omri span { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sage); margin-top: 4px; }
+    .omri span { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--brown); margin-top: 4px; }
     .callout { display: flex; justify-content: space-between; gap: 16px; align-items: center; background: var(--sage-soft); border-radius: 14px; padding: 16px 18px; margin-top: 16px; }
     .callout p { margin: 0; }
     .callout.gold { background: var(--gold-soft); }
@@ -192,16 +204,17 @@
     .stat { background: var(--paper); border-radius: 14px; padding: 16px 18px; border: 1px solid var(--line); }
     .stat b { display: block; font-size: clamp(2rem, 4vw, 3rem); color: var(--brown); }
     .stat span { color: var(--muted); font-size: 0.95rem; }
-    .stat.gain { background: var(--sage); color: white; border-color: var(--sage); }
-    .stat.gain b, .stat.gain span { color: white; }
+    .stat.gain { background: var(--brown); color: var(--gold); border-color: var(--brown); }
+    .stat.gain b { color: var(--gold); }
+    .stat.gain span { color: #F6E2C4; }
     .bars { display: grid; gap: 8px; margin: 8px 0 18px; }
     .bar { display: grid; grid-template-columns: 96px 1fr; gap: 10px; align-items: center; font-size: 0.92rem; font-weight: 700; }
     .bar i { display: block; height: 12px; border-radius: 999px; background: #d9c7a4; position: relative; }
-    .bar i::before { content: ""; position: absolute; inset: 0 auto 0 0; width: var(--w); border-radius: inherit; background: var(--sage); }
+    .bar i::before { content: ""; position: absolute; inset: 0 auto 0 0; width: var(--w); border-radius: inherit; background: var(--leaf); }
     .bar.check i::before { background: #b9a48a; }
     .pass-grid { grid-template-columns: repeat(3, 1fr); margin: 12px 0 18px; }
     .pass { background: var(--paper); border-radius: 14px; padding: 16px; border: 1px solid var(--line); }
-    .pass .when { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage); }
+    .pass .when { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brown); }
     .pass b.rate { font-family: var(--serif); font-size: 1.6rem; display: block; margin: 4px 0; }
     .econ-grid { grid-template-columns: repeat(4, 1fr); }
     .facts { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; padding: 0; list-style: none; }
@@ -232,12 +245,12 @@
     .qty-row input { width: 88px; text-align: center; font-weight: 700; }
     .product-shot { width: 100%; height: 220px; object-fit: cover; border-radius: 12px; background: #efe8dc; margin-bottom: 12px; }
 
-    .about { display: grid; grid-template-columns: 0.72fr 1.28fr; gap: 22px; align-items: stretch; }
-    .about-photo { position: relative; border-radius: 18px; overflow: hidden; min-height: 420px; background: #ddd; }
-    .about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; display: block; position: absolute; inset: 0; }
+    .about { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 22px; align-items: start; }
+    .about-photo { position: relative; border-radius: 18px; overflow: hidden; aspect-ratio: 3 / 4; background: #d7c4a4; border: 3px solid var(--brown); }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 42%; display: block; position: absolute; inset: 0; }
     .about-photo figcaption { position: absolute; left: 0; right: 0; bottom: 0; margin: 0; padding: 28px 16px 14px; background: linear-gradient(transparent, rgba(30, 22, 14, 0.88)); color: white; font-weight: 700; }
     .founder + .founder { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); }
-    .role { margin: 0 0 8px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+    .role { margin: 0 0 8px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #6A3A1C; }
 
     .socials { display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; }
     .socials a { text-decoration: none; color: var(--ink); font-weight: 700; text-align: center; min-width: 88px; }
@@ -245,18 +258,20 @@
       width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; margin: 0 auto 6px; color: white;
     }
     .social-bubble.fb { background: #1877f2; }
-    .social-bubble.ig { background: #c13584; }
+    .social-bubble.x { background: var(--brown); color: var(--gold); }
     .social-bubble.yt { background: #e10600; }
 
     .contact-card { max-width: 720px; margin: 0 auto; }
 
-    footer { background: var(--white); border-top: 1px solid var(--line); padding: 36px 0 28px; }
+    footer { background: var(--brown); color: #F6E2C4; border-top: 6px solid var(--gold); padding: 36px 0 28px; }
     .footer-grid { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: start; }
-    .footer-brand { display: flex; gap: 12px; align-items: center; }
-    .footer-brand img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; }
+    .footer-brand { display: flex; gap: 14px; align-items: center; }
+    .footer-brand img { width: 104px; height: 104px; flex: none; border-radius: 12px; }
+    footer a { color: var(--gold); }
+    footer strong { color: white; }
     footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
-    footer p { color: var(--muted); margin: 8px 0 0; max-width: 36rem; }
-    .legal { margin-top: 22px; color: var(--muted); font-size: 0.92rem; }
+    footer p { color: #F6E2C4; margin: 8px 0 0; max-width: 36rem; }
+    .legal { margin-top: 22px; color: #F6E2C4; font-size: 0.92rem; }
 
     @media (max-width: 980px) {
       .hero-grid, .story, .split, .calc-layout, .about, .buy-grid { grid-template-columns: 1fr; }
@@ -264,7 +279,7 @@
       .tool-grid, .focus-grid, .pass-grid, .econ-grid { grid-template-columns: 1fr; }
       .trust { grid-template-columns: 1fr 1fr; }
       .benefit-grid { grid-template-columns: 1fr; }
-      .about-photo { min-height: 380px; }
+      .about-photo { min-height: 0; }
       .yield-pair { grid-template-columns: 1fr; }
     }
     @media (max-width: 560px) {
@@ -281,13 +296,15 @@
       nav.open { display: flex; }
       nav a { padding: 12px; }
       nav a.contact-link { margin: 4px 0 0; text-align: center; }
-      .gallery { grid-template-columns: 1fr 1fr; }
-      .gallery img { height: 120px; }
+      .field-grid { grid-template-columns: 1fr 1fr; }
       .form-row, .callout, .product-head { grid-template-columns: 1fr; display: grid; }
       .callout, .product-head { display: flex; flex-direction: column; align-items: flex-start; }
       .section { padding: 52px 0; }
       h1 { font-size: 2.35rem; }
       .header-inner { padding-inline: 14px; }
+      .brand img { width: 78px; height: 78px; }
+      .hero-logo { width: min(210px, 68%); }
+      :root { --header: 102px; }
       .wrap { padding-inline: 14px; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -302,7 +319,7 @@
   <header>
     <div class="header-inner">
       <a class="brand" href="#top">
-        <img src="logo.jpg" width="52" height="52" alt="">
+        <img src="logo.png" width="1080" height="1080" alt="">
         <span class="brand-name">Natural Heartland<small>Solutions · Northwest Iowa</small></span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
@@ -321,6 +338,7 @@
     <section class="hero wrap">
       <div class="hero-grid">
         <div>
+          <img class="hero-logo" src="logo.png" width="1080" height="1080" alt="Natural Heartland Solutions">
           <p class="kicker">Soil-first organic agriculture</p>
           <h1>Healthier soil. Cleaner water. Stronger yields.</h1>
           <p class="lede">Natural Heartland Solutions starts where every great crop starts — in the soil. Our OMRI certified organic formulas rebuild living soil biology, then carry that same biological power into manure pits and farm ponds. One ecosystem, restored from the ground up.</p>
@@ -335,8 +353,8 @@
           </ul>
         </div>
         <figure class="hero-photo">
-          <img src="soil-tractor.jpg" width="1000" height="750" alt="Tractor working tilled Iowa soil">
-          <figcaption class="hero-caption"><strong>Farmer developed in northwest Iowa</strong>Co-founders Wyatt Streit and Evan Deal</figcaption>
+          <img src="harvest-combine.jpg" width="1600" height="1200" alt="Gleaner combine harvesting soybeans">
+          <figcaption class="hero-caption"><strong>Harvest on our ground</strong>A Gleaner combine in soybeans</figcaption>
         </figure>
       </div>
     </section>
@@ -378,25 +396,6 @@
       </div>
     </section>
 
-    <div class="wrap gallery" aria-label="Farm, barn, and water photos">
-      <figure>
-        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&amp;fit=crop&amp;w=800&amp;q=70" width="800" height="500" alt="Healthy living soil and roots" loading="lazy">
-        <figcaption>Soil biology</figcaption>
-      </figure>
-      <figure>
-        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&amp;fit=crop&amp;w=800&amp;q=70" width="800" height="500" alt="Iowa farm fields" loading="lazy">
-        <figcaption>Midwest farms</figcaption>
-      </figure>
-      <figure>
-        <img src="hogbarn.jpg" width="1000" height="1333" alt="Hogs in a barn" loading="lazy">
-        <figcaption>Manure management</figcaption>
-      </figure>
-      <figure>
-        <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&amp;fit=crop&amp;w=800&amp;q=70" width="800" height="500" alt="Farm pond and water" loading="lazy">
-        <figcaption>Pond and lake health</figcaption>
-      </figure>
-    </div>
-
     <div class="wrap">
       <div class="trust">
         <div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="m8.5 12.5 2.2 2.2 4.8-5"/></svg>OMRI Certified Organic</div>
@@ -432,7 +431,7 @@
 
     <section class="wrap" style="padding-bottom: 72px;">
       <div class="story">
-        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&amp;fit=crop&amp;w=1200&amp;q=70" width="1200" height="800" alt="Living soil and roots" loading="lazy">
+        <img src="soil-tractor.jpg" width="1000" height="750" alt="Tractor working tilled Iowa soil" loading="lazy">
         <div>
           <p class="kicker">Why soil comes first</p>
           <h2>It all starts in the soil</h2>
@@ -440,6 +439,38 @@
           <p>That conviction drives everything. Our soil-health line rebuilds the microbial foundation beneath your crops, and the same OMRI listed biology powers our Pit Pucks and Pond Pucks. Healthy soil, managed manure, and clean water are one connected system — and we treat them that way.</p>
           <a class="btn btn-ghost" href="#contact">Talk to our team</a>
         </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="field">
+      <p class="kicker">From the field</p>
+      <h2>Events and harvest</h2>
+      <p class="lede">Harvest, field days, and dealer meetings. These are the same people and the same ground behind the products.</p>
+      <div class="field-grid">
+        <figure>
+          <img src="harvest-unloading.jpg" width="900" height="1600" alt="Combine auger unloading corn into a green grain wagon" loading="lazy" decoding="async" style="object-position: center 42%">
+          <figcaption>Unloading corn</figcaption>
+        </figure>
+        <figure>
+          <img src="harvest-combine.jpg" width="1600" height="1200" alt="Gleaner combine harvesting soybeans" loading="lazy" decoding="async" style="object-position: center 55%">
+          <figcaption>Soybean harvest</figcaption>
+        </figure>
+        <figure>
+          <img src="founders-stage.jpg" width="1200" height="1600" alt="Wyatt Streit and Evan Deal on stage at a Natural Heartland Solutions event, with a United States flag behind them" loading="lazy" decoding="async" style="object-position: center 22%">
+          <figcaption>Wyatt and Evan on stage</figcaption>
+        </figure>
+        <figure>
+          <img src="field-day-sheriff.jpg" width="1200" height="1600" alt="Guests networking at an outdoor soil health field day, including a uniformed officer" loading="lazy" decoding="async" style="object-position: center 28%">
+          <figcaption>Field day conversations</figcaption>
+        </figure>
+        <figure>
+          <img src="field-day-crowd.jpg" width="1200" height="1600" alt="Crowd seated outdoors at a soil health field day" loading="lazy" decoding="async" style="object-position: center 46%">
+          <figcaption>Soil health field day</figcaption>
+        </figure>
+        <figure>
+          <img src="terra-event.jpg" width="1200" height="1600" alt="Full audience at an indoor Terra and Biomentum dealer presentation" loading="lazy" decoding="async" style="object-position: center 40%">
+          <figcaption>Terra and Biomentum meeting</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -690,7 +721,7 @@
       <p class="lede">Natural Heartland Solutions is a farmer-developed agricultural enterprise dedicated to introducing premium, environmentally responsible solutions across the American Midwest — rooted in the belief that healthy soil is the foundation of every successful operation.</p>
       <div class="about">
         <figure class="about-photo">
-          <img src="founders.jpg" width="506" height="770" alt="Evan Deal, left, and Wyatt Streit, right, standing in a cornfield">
+          <img src="founders.jpg" width="1200" height="1600" alt="Evan Deal, left, and Wyatt Streit, right, leaning on a red gate in Natural Heartland Solutions hats and polos">
           <figcaption>Evan Deal, left · Wyatt Streit, right</figcaption>
         </figure>
         <div>
@@ -719,11 +750,11 @@
           </span>
           Facebook
         </a>
-        <a href="#socials" aria-label="Instagram">
-          <span class="social-bubble ig" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.2" cy="6.8" r="0.8" fill="currentColor" stroke="none"/></svg>
+        <a href="https://x.com/NHSolutionsIA">
+          <span class="social-bubble x" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
           </span>
-          Instagram
+          X
         </a>
         <a href="https://www.youtube.com/@NaturalHeartlandSolutions">
           <span class="social-bubble yt" aria-hidden="true">
@@ -773,7 +804,7 @@
     <div class="wrap">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="logo.jpg" width="56" height="56" alt="">
+          <img src="logo.png" width="1080" height="1080" alt="">
           <div>
             <strong>Natural Heartland Solutions</strong>
             <p>Building healthier soil, cleaner water, and stronger yields for progressive Midwest producers.</p>
@@ -794,6 +825,7 @@
             <li><a href="#products">Order pucks</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="https://www.facebook.com/profile.php?id=61584764127446">Facebook</a></li>
+            <li><a href="https://x.com/NHSolutionsIA">X</a></li>
             <li><a href="https://www.youtube.com/@NaturalHeartlandSolutions">YouTube</a></li>
           </ul>
         </div>
